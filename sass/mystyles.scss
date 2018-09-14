@@ -1,0 +1,76 @@
+@charset "utf-8";
+
+// Set your brand colors
+$beige-light: #D0D1CD;
+$beige-lighter: #EFF0EB;
+$price: #ff3366;
+$myprimary: #ff3366;
+$grey-lighter:hsl(0, 0%, 86%);
+
+// Update Bulma's global variables
+$primary: #ff3366;
+
+// Update some of Bulma's component variables
+$body-background-color: $beige-lighter;
+$card-shadow: none;
+$breadcrumb-item-color:$myprimary;
+
+$pagination-hover-color:$myprimary;
+$pagination-hover-border-color:$myprimary;
+$pagination-current-color:$myprimary;
+$pagination-current-background-color:none;
+$pagination-current-border-color:$myprimary;
+
+
+
+@import "../node_modules/bulma/bulma.sass";
+
+.good-title {
+  width: 98%;
+  height: 18px;
+  line-height: 18px;
+  overflow: hidden;
+  margin: 10px 10px 9px 5px;
+  font-weight: normal;
+}
+
+.good-title a {
+  display: inline;
+  color: #333;
+  letter-spacing: 1px;
+}
+
+.good-title a:hover {
+  text-decoration: underline;
+  color: #333;
+}
+.good-price {
+  vertical-align:text-top;
+  font-family: Arial;
+  padding-left: 0.3em;
+  padding-right: 0.3em;
+  padding-bottom: 1.3em;
+}
+.good-price .price-current {
+  font-size: 25px;
+  line-height: 25px;
+  color: #ff3366;
+  float: left;
+}
+.good-price .price-old {
+  color: #bbb;
+  text-decoration: line-through;
+  font-size: 14px;
+  line-height: 18px;
+  float: left;
+}
+em {
+  font-style: normal;
+  font-weight: 400;
+}
+.good-price em {
+  font-size: 14px;
+  font-family: "verdana";
+  vertical-align: 1px;
+  margin-left: 1px;
+}
