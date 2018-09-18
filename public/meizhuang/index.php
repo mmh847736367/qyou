@@ -1,0 +1,1 @@
+<?php $q="美妆"; require "../category.php";

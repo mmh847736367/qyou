@@ -6,7 +6,6 @@ use GuzzleHttp\Client;
 
 class Spider
 {
-
 	static function curl_get($url,$refer) {
         $ch=curl_init();
         curl_setopt($ch,CURLOPT_URL,$url);
@@ -30,7 +29,13 @@ class Spider
             'timeout' => 5,
             'verify' => false,
             'stream' => true,
-            'allow_redirects' => true,
+            'allow_redirects' => [
+                'max'             => 10,        // allow at most 10 redirects.
+                'strict'          => true,      // use "strict" RFC compliant redirects.
+                'referer'         => true,      // add a Referer header
+                'protocols'       => ['https'], // only allow https URLs
+                'track_redirects' => true
+            ],
             'headers' => [
                 'Referer' => $refer,
                 'User-Agent' => 'Mozilla/5.0 (compatible; MSIE 8.0; Windows NT 5.2; Trident/4.0; Media Center PC 4.0; SLCC1; .NET CLR 3.0.04320)',

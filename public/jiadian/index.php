@@ -1,0 +1,1 @@
+<?php $q="家电"; require "../category.php";

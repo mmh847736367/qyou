@@ -1,0 +1,1 @@
+<?php $q="内衣"; require "../category.php";

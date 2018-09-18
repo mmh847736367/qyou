@@ -1,0 +1,1 @@
+<?php $q="汽摩"; require "../category.php";

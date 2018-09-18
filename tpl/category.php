@@ -78,13 +78,7 @@
         <nav class="breadcrumb" aria-label="breadcrumbs">
             <ul>
                 <li><a href="<?= $c['app_size'] ?>">首页</a></li>
-                <li class="is-active"><a href="#" aria-current="page">
-                    <?php if($uri == 'good') : ?>
-                        "<?= $q; ?>"相关搜索</a>
-                    <?php else : ?>
-                        <?= $q; ?>
-                    <?php endif; ?>
-                </li>
+                <li class="is-active"><a href="#" aria-current="page"><?= $q; ?></a></li>
             </ul>
         </nav>
 
@@ -92,46 +86,46 @@
             <div class="columns">
 
                 <?php foreach ($items as $item) : ?>
-                <div class="column is-3">
-                    <div class="card">
-                        <div class="card-image">
-                            <a href="<?= $item->url ?>" target="_blank">
-                                <figure class="image is-1by1">
-                                    <img src="<?= $item->img2 . '_300x300.jpg'; ?>" alt="Placeholder image">
-                                </figure>
-                            </a>
-                        </div>
+                    <div class="column is-3">
+                        <div class="card">
+                            <div class="card-image">
+                                <a href="<?= $item->url ?>" target="_blank">
+                                    <figure class="image is-1by1">
+                                        <img src="<?= $item->img2 . '_300x300.jpg'; ?>" alt="Placeholder image">
+                                    </figure>
+                                </a>
+                            </div>
                             <h3 class="good-title">
                                 <a target="_blank" class="is-size-7" href="
                             <?php
-                                      if( strpos($item->url,'a.m.taobao.com') !== false ) {
-                                          $id = mysub($item->url, 'com/i','.htm');
-                                      } else {
-                                          $id = mysub($item->url, 'id=','&');
-                                      }
-                                      echo '/good/'. jiaohuan_1(tihuan_1($id), 3). '.html';
+                                if( strpos($item->url,'a.m.taobao.com') !== false ) {
+                                    $id = mysub($item->url, 'com/i','.htm');
+                                } else {
+                                    $id = mysub($item->url, 'id=','&');
+                                }
+                                echo '/'.$uri.'/'. jiaohuan_1(tihuan_1($id), 3). '.html';
 
                                 ?>" title="<?= $item->title; ?>">
                                     <?php
-                                        $host = parse_url($item->url, PHP_URL_HOST);
-                                        if (strpos($host, 'taobao') !== false) {
-                                            echo '<img src="/images/icon_1.png">';
-                                        } else {
-                                            echo '<img src="/images/icon_2.png">';
-                                        }
+                                    $host = parse_url($item->url, PHP_URL_HOST);
+                                    if (strpos($host, 'taobao') !== false) {
+                                        echo '<img src="/images/icon_1.png">';
+                                    } else {
+                                        echo '<img src="/images/icon_2.png">';
+                                    }
                                     ?>
                                     <?= $item->title; ?>
                                 </a>
                             </h3>
-                        <div class="good-price is-clearfix">
-                            <span class="price-current"><em>￥</em><?= (int) $item->price ?></span>
-                            <?php if ($item->price != $item->originalPrice) : ?>
-                            <span class="price-old"><em>￥</em><?= (int) $item->originalPrice ?></span>
-                            <?php endif; ?>
-                            <span class="is-size-7 is-pulled-right " style="color: #999">已售<?= $item->sold; ?></span>
+                            <div class="good-price is-clearfix">
+                                <span class="price-current"><em>￥</em><?= (int) $item->price ?></span>
+                                <?php if ($item->price != $item->originalPrice) : ?>
+                                    <span class="price-old"><em>￥</em><?= (int) $item->originalPrice ?></span>
+                                <?php endif; ?>
+                                <span class="is-size-7 is-pulled-right " style="color: #999">已售<?= $item->sold; ?></span>
+                            </div>
                         </div>
                     </div>
-                </div>
                 <?php endforeach; ?>
 
             </div>

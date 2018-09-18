@@ -1,0 +1,1 @@
+<?php $q="数码"; require "../category.php";

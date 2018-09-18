@@ -1,0 +1,1 @@
+<?php $q="生活"; require "../category.php";

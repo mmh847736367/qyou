@@ -2,30 +2,16 @@
 
 
 
-require_once '../vendor/autoload.php';
-$c = require_once '../config.php';
-require '../bootstrap.php';
+require_once '../../vendor/autoload.php';
+$c = require_once '../../config.php';
+require '../../bootstrap.php';
 
 use App\TaobaoSpider;
 use App\Page;
 
 $db = new App\QueryBuilder(App\Connection::make($c['db']));
-$q = $_GET['q'] ?? '';
+
 $page =  $_GET['p'] ?? 1;
-
-
-//在数据库中查询该关键字，没有就跳转404
-$deKeyWord = tihuan_2(jiaohuan_2($q,3));
-$statement = $db->pdo->prepare("select keyword, url from links where keyword = :wd");
-$statement->execute([':wd' => $deKeyWord]);
-$res = $statement->fetchAll();
-if(count($res) == 0) {
-    Header("HTTP/1.1 404 Not Found");
-    exit;
-}
-
-$q = $res[0]['url'];
-
 
 $items = TaobaoSpider::getTaobaoSearch($q, $page);
 $listItem = $items->listItem;
@@ -54,8 +40,4 @@ foreach ($listItem as $k => $v) {
 
 
 //print_r($data);
-include_once '../tpl/search.php';
-
-
-
-
+include_once '../../tpl/search.php';

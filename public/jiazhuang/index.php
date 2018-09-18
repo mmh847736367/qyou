@@ -1,0 +1,1 @@
+<?php $q="家装"; require "../category.php";

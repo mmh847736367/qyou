@@ -1,0 +1,1 @@
+<?php $q="户外"; require "../category.php";

@@ -2,13 +2,15 @@
 
 // Set your brand colors
 $beige-light: #D0D1CD;
-$beige-lighter: #EFF0EB;
+$beige-lighter: #f1f1f1;
 $price: #ff3366;
 $myprimary: #ff3366;
 $grey-lighter:hsl(0, 0%, 86%);
 
 // Update Bulma's global variables
 $primary: #ff3366;
+$link: hsl(0, 0%, 29%);
+$link-hover: $price;
 
 // Update some of Bulma's component variables
 $body-background-color: $beige-lighter;
@@ -22,8 +24,23 @@ $pagination-current-background-color:none;
 $pagination-current-border-color:$myprimary;
 
 
+$box-radius: 0px;
+$box-shadow: none;
+
+
 
 @import "../node_modules/bulma/bulma.sass";
+
+::selection {
+  background-color: $price;
+  color: #fff;
+}
+@media screen and (min-width: 1472px) {
+  .container {
+    max-width: 1200px;
+    width: 1200px;
+  }
+}
 
 .good-title {
   width: 98%;
@@ -74,3 +91,102 @@ em {
   vertical-align: 1px;
   margin-left: 1px;
 }
+
+h3 {
+  height: auto;
+  line-height: 30px;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+ul#Jdetail li {
+  width: 260px;
+  height: 18px;
+  overflow: hidden;
+  margin: 10px 15px 0 0;
+  line-height: 18px;
+  vertical-align: top;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  color: #666;
+}
+ul#Jdetail li a{
+  color: #333;
+}
+ul#Jdetail li a:hover{
+  text-decoration: underline;
+}
+
+.D1fbt {
+  margin: 10px 3px;
+  padding: 2em 0;
+  background: #dddddd;
+  border: 5px solid #eeeeee;
+  position: relative;
+}
+.D1fbt a {
+  position: relative;
+  display: block;
+  width: 80px;
+  height: 80px;
+  //border: 1px solid #fff;
+  margin: 10px auto 0 auto;
+}
+.img-current {
+  border: 2px solid #ff3366 !important ;
+}
+.good-detail {
+  min-height: 690px;
+}
+.good-price-box em {
+  font-size: 14px;
+  font-family: "verdana";
+  vertical-align: 1px;
+  margin-left: 1px;
+}
+
+.good-price-box {
+  border: 3px solid hsl(0, 0%, 94%);
+  padding-top: 0.5em;
+  padding-bottom: 0.8em;
+  border-radius: 10px;
+}
+
+.relate_words {
+  padding-top: 2.2em;
+  padding-bottom: 0.6em;
+  font-size: 12px;
+  line-height: 23px;
+}
+
+.bd-footer {
+  border-top: #ff3366 3px solid;
+  padding-top: 1.4em;
+  font-size: 12px;
+}
+
+.bd-footer a {
+  font-size: 14px;
+  line-height: 25px;
+}
+
+.bd-footer-title {
+  color: #363636;
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+.bd-main {
+  padding-top: 1em;
+}
+.footer-links {
+  padding-bottom: 0.7em;
+}
+
+.copyright {
+  line-height: 47px;
+  overflow: hidden;
+  margin-top: 0.6em;
+  padding-bottom: 1.2em;
+  border-top: #ccc 1px dotted;
+}
+

@@ -70,3 +70,13 @@ function jiaohuan_2($str, $num)
     }
     return $str;
 }
+
+function mbStringToArray ($string,$len) {
+    $strlen = mb_strlen($string);
+    while ($strlen) {
+        $array[] = mb_substr($string,0,$len,"UTF-8");
+        $string = mb_substr($string,$len,$strlen,"UTF-8");
+        $strlen = mb_strlen($string);
+    }
+    return $array;
+}

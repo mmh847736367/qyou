@@ -1,0 +1,1 @@
+<?php $q="配饰"; require "../category.php";

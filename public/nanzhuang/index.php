@@ -1,0 +1,1 @@
+<?php $q="男装"; require "../category.php";

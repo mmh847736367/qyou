@@ -1,0 +1,1 @@
+<?php $q="游戏"; require "../category.php";

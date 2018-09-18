@@ -1,0 +1,1 @@
+<?php $q="美食"; require "../category.php";

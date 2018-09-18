@@ -1,0 +1,1 @@
+<?php $q="文娱"; require "../category.php";
